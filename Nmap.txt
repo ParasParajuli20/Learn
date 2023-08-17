@@ -1,0 +1,75 @@
+NMap
+
+What is Nmap?
+Tools for network Discovery and security auditing. 
+Useful for tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime. 
+
+Basic nmap scannings
+
+-sT TCP Connect Scans (Communication standard that enables application programs and computing devices to exchange messages over a network)
+-sS SYN "Half-open" Scans ( determine the state of communications port without establishing a full connection)
+-sU UDP Scans (can be used to check both tcp and syn scans on the same run)
+
+ -sN TCP Null Scans ( doesnot set any flag while sending a packet to a particular port or service. Reciving a packet with RST/ack indicates that the port is closed or filtered.)
+
+-sF TCP FIN Scans ( send FIN i.e.finish flag while sending a packet to particular port or service. If the port is open it responds to our packet and indicate the port is open)
+
+-sX TCP Xmas Scans ( here three diffrent flags are sent i.e. FIN(Finish), PSH(Push), URG(Urgent) in the port or for service. These are effective behind a stateless firewall.)
+
+-sn ping sweep 
+
+-Pn (tells nmap not to bother pinging the host before scanning i.e. nmap always treat target host as being alive, effectively bypassing ICMP block)
+
+--top-ports 20 <target> (will scan the top 20 most commonly used UDP ports, resulting in a much more acceptable scan time.)
+
+--script=vuln (for vuln category)
+--script=safe (applicable safe script will be run aganist the target)
+--script=<script_name> (to run specific target)
+--script=<script_name>,<script_name> (to run multiple script)
+
+--script-args (for arguments)
+
+<script-name>.<argument> (script name and argument are connect by priods i.e. "." adn script name are spereted by commans i.e. ",")
+
+maxlist (the maximum number of files to return in the directory listing. defult is 20) 
+
+Switches mostly used for firewall evasion:
+
+-f (used to fragment the packets, making it less likely that the paket will be deteted bu firewall)
+
+--mtu <number> ( alternation to -f i.e. set maximum transmission unit to be use for the packet sent. this must be in multiplier of 8 )
+
+--scan-delay <time>ms (use to make the delay between packet sent)
+
+--badsum ( used to generate invalid checksum for packets. This switch an be used to determine the presence of firewalls because firewalls may potentially repond automatially without bothering to check the checksum of the packet) 
+
+What optional argument can the ftp-anon.nse script take?  maxlist
+
+NSE ( Nmap Scripting Engine) 
+written in Lua Programming Language
+can be used for scanning vulberabilities, automating exploits for them adn many more
+useful for reconnaisance 
+
+Categories of scripting are
+safe: wont affect the target
+intrusive : not safe, likely to affect the target
+vuln: scan for vulnerabilities
+exploit: attempt to exploit vulnerability
+auth: attempt to bypass authenication for running services
+brute: attempt to bruteforce credentials for running services
+discovery: attempt to query running services for further information about network
+
+Searching for scripts 
+
+/usr/share/nmap/scripts ( stored location for linux on local storage)
+
+Installing nmap and scripts 
+
+sudo apt update && sudo apt install nmap
+nmap --script-updatedb
+
+Searching for installed Sripts
+
+/usr/share/nmap/scripts/script.db (for all available scripts)
+grep "ftp" /usr/share/name/scripts/script.db (for all scripts available for ftp)
+
