@@ -1,0 +1,65 @@
+Active Directory
+1. database and set of service that connect users with the network resources they need to get their work done
+2. contains critical information about your environment, including what users and computers there are who's allowed to do what.
+
+Benefits of Active Directory
+1. Administratiors enjoy centealized user and rights management
+2. Centralized control over computer and user configurations through AD Group Policy Fearure.
+
+
+Group Policy
+1. Hierarchical infrastructure that allows a network administration in charge of Microsoft's Active Directory to implement specific configuration for user and computers. 
+2. Primarily a security tool, and can be used to apply security settings to users and computers.
+
+How does Active Directory work?
+Main directory service is Active directory domain serives (AD DS) and is a part of windows server operating system
+server that run main directory are called Domain Controllers (DCs).
+
+Organization normally have multiple DCs and each one has a copy of entire where a small change in one DCs can lead to change in all the DCs so they all stay up to date.
+
+Active directory is only for on-premises Microsoft environments while in the clouds, microsoft uses Azure Active Directory, which serves the same purpose as its on-premises.  AD and Azure AD are seprate but can work together to some degree , if you have an hybird deployment.
+
+
+Structure of Active Directory
+
+AD has three main tiers. Domains,Trees and Forests. 
+Domain is a group of related users, computers and other AD objects, such as all the AD objets for your company office. Domain is a management boundary. The objects for a given domain are stored in a single database and can be managed together.
+
+Trees are the group of domain. 
+
+Forests is a security boundary. Objects in forest are not able to interact with each other unless the administrators of each forest creat a trust between them. 
+
+What is in the Active Directory Database?
+ Common types of AD objects include users, computers, applications, printers and shared folders. 
+Object have attributes. Some attributes are obvious and some are more behind scenes. 
+Databases are structures, which means there is a design which determines what types of data they store and how the data are prganized. This design are also calles schema.
+
+
+Active Directory Security
+Active Directory detemines who has which key for entering the network., as well as which data and other resources each of those key can unlock. 
+
+Common Active directory security risks
+Insider threats, spear-phishing, privillage escalation and lateral movement.
+
+Active Directory security best practices
+1. Regular Assessments
+ Regurlarly review the state of your IT environment and proactively look for potential security and compliance issues.
+Periodically comparing the configuration settings on windows endpoints, domain controllers and other systems to a known good statre, and then promptly remediate any unintended drift or malicious changes.
+Rgularly reviewing the Group Policy.
+Ensuring windows server OS and other software are up to date on patches and that we are using only versions fully supported by vendors
+
+2. Minimize user permissions
+Least privilege principle can be the best practice i.e. giving each users exactly the access they need to di their job, no more and no less.
+
+3. Investigate security incidents
+ Need to be able to quicly determine where the breach originated, how it unfolded and exactly what systems and data ere involved.
+
+4. Manage user and group permissions
+ The ability to create AD security groups and manage permissions for smiliar users togther reduces the load. 
+
+5. Control Admin Permissions
+   It improves security by reducing errors in provisioning and deprovisioning and by minimizing the complexity of permission structure. Organization need to tighlty control who is in these privileged access groups and be alert for any changes to the membership, which could indiate an attacker or malicious insider attempting to escalate their privileges to gain access to additional systems or data
+
+6. Service account permissions
+   Taking special precautions while a servie account needs administrative privilage should be done. 
+
