@@ -1,0 +1,42 @@
+Burp Suite
+
+Framework is a framework writeen in java that aims to provide a one-stop-shop for web application penetration testing. Also used when accessing mobile applicatins, as the same features which is so attractive for web app testing translate almost perfectly into testing the APIs.
+
+The abaility to intercept, view and modify web request prior to them being sent to the target server, makes burp suite perfect fot any kind of manual web app testing.
+
+Featires of Burp Community
+
+Proxy:
+	Well-known aspet of burp suite, allows us to intercept and modify request/response when interacting with web application
+
+Repeater:
+	Allows su to capture, modify, then resend the same request numerous time. This feature can be absolutley invaluable, espically when we neef to craft a payload through trial and error or when testing the functionaliy of a endpoint for flaws.
+
+Intruder:
+	allows us to spray an endpoint with request. This is often used for bruteforce attacks or to fuzz end points.
+
+Decoder: 
+	provides valuable service when trasforming data --either in terms of deoding captured information, or enoding a payload prior to sending it to the target. 
+
+Comparer:
+	allows us to compare two pieces of data at either word or byte level. 
+
+Sequencer:
+	sequence is used when accessing the randomness of tokens such as cookie values or other supposedly random generated data. 
+
+
+Shortcut for burp suit
+
+ctrl+shift+D  Switch to the dashboard
+ctrl+shift+t  switch to the target tab
+ctrl+shift+p  switch to the proxy tab
+ctrl+shift+i  switch to the intruder tab
+ctrl+shift+r  switch to the repeater tab
+
+There are two ways to proxy our traffic using the proxy:
+1. We could use the embeded browser
+2. We can configure our local web browser to proxy our traffic through Brup.
+
+
+ 
+
