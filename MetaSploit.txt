@@ -1,0 +1,95 @@
+Metasploit 
+
+It is most widely used exploitation framework. 
+It is a set of tools that allow information gathering, scanning, exploitation, exploit development, post-exploitation, and more. 
+
+Main Components of the Metasploit Framework can be summarized as
+msfconsole: main command line interface
+modules: supporting modules susch as exploits, sanners, payloads etc.
+tools: help in vulnerability research, vulnerability assesment or penetration testing. 
+
+
+
+Launching metasploit in kali linux
+
+msfconsole 
+
+This will be your main interface to interact with the diffrent modules of the metasploit framework.
+
+Clarifying few recurring concepts 
+
+Exploits: a piece of code that uses vulnerability prsent on the target system
+
+Vulnerability: a design, coding or logic flaws affeting the target system. The exploitation of a vulnerability can result in discolsing a confidential information or allowing the atacker to execute code on the target system. 
+
+Payload: If we want to exploit to have a result we want, we need to use a payload. Payloads are the code that will run on the target system.
+
+
+
+Auxilary 
+any supporting module, such as scanners, crawlers and fuzzers, can be found here.
+
+Encoders 
+will allow you to encode the exploit and payload in the hope that a signature-based antivirus solution may miss them. 
+
+Evasion
+while encoders will encode the payload, they should not be considered a direct attempt to envade antivirus software. On the other hand, evasion modules will try that, with more or less success. 
+
+NOPs 
+Do nothing. Represented in the intel x86 CPU family, they are represented within the 0*90, following which the CPU will do nothing for one cycle. 
+
+Payloads.
+Codes that will run on the target system.
+
+Different ategories of payloads are as follows:
+Adapters:
+	Wraps single payloads to convert them into diffrent formats. Such as a normal single payload can be wrapped inside a  single powershell command that will execute the payload
+
+Singles:
+	Self-Contained payloads that do not need to download an additional component to run.
+
+Stagers:
+	Responsible for setting up a connection channel between the metasploit and target system. useful when working with staged payloads.
+
+Stages: 
+	Download by stager. This allows you to use laeger sized payloads.
+
+Post:
+	Useful for final stage of penetration testing process listed above.
+
+
+msfconsole can be used just like regular command-line shell.
+Common commands are
+
+ls : list the contents of the folder from where msfconsole is run
+ping : sent to googke's DNS IP address(8.8.8.8)
+ping -c 1 : ( sending only a ping )
+clear : clear the screen
+help set : for help commands
+history : to see earlier typed commands
+show : command can be used in any context followed by a mode type
+back: leave the context
+info : information about any module
+search: serach the metasploit framework databases for modules relevent to the given search paramenter.
+unset : clear any parameter value
+unset all : clear all set parameters
+setg : set the values that will be used fot all modules.
+unsetg: clear value set by setg
+back : leave the exploit context.
+session -i : interact with any session.
+
+converting windows from msf6 to msfd expoit (...)
+
+use exploit/windows/smb/ms17_010_enternalblue
+
+
+Parameters that we will often use 
+
+RHOSTS : Remote Host, or the ip address of the target system. This will support the CIDR (Classless inter-Domain Routing). 
+RPORT: Remote Port, the port on the target system the vulnrtable application is running on.
+LHOST: Local Host, the attacking machine ip address
+LPORT: Local Port, the port you will use for the reverse shell to connect back to. This is the port of attacking machine. 
+SESSION: each connection established to the target system using Metasploit will have a session ID. Here we will use this with post-exploitation modules that will connect to the target system using an existing connection.
+
+
+
